@@ -33,3 +33,26 @@ The first lab work implements basic matrix operations and is aimed to give under
 
 #### Usage
 Change the matrix and the constant in the MatrixApplication file as needed, then save the file, recompile and run again to see the results in CLI.
+
+--- 
+### Lab Work 2: Strings in Java
+
+#### Overview
+The second lab work implements string processing and enhances the understanding of string manipulation and exception handling in Java.
+
+#### Features
+- Replaces words of a specified length in the text with a replacement string. (C17 = 15 % 17 = 15)
+- Supports both English and Ukrainian alphabets.
+- Counts letters in words excluding numbers and special characters.
+- Handles space separation and punctuation.
+- Exception handling for:
+  - Null inputs for text and replacement strings.
+  - Input text length exceeding 1000 characters.
+  - Replacement string length exceeding 100 characters.
+  - Word length being outside the range of 1 to 30.
+- Text type is `StringBuilder` (C3 = 15 % 3 = 0)
+
+#### Usage
+Change the input text, word length, and replacement string in the `StringApplication` file as needed. You can check the limits for those values in the `TextProcessor` class constructor.
+
+After making changes, save the file, recompile, and run again to see the results in the command line interface (CLI).

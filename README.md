@@ -56,3 +56,23 @@ The second lab work implements string processing and enhances the understanding 
 Change the input text, word length, and replacement string in the `StringApplication` file as needed. You can check the limits for those values in the `TextProcessor` class constructor.
 
 After making changes, save the file, recompile, and run again to see the results in the command line interface (CLI).
+
+--- 
+### Lab Work 3: Classes in Java
+
+#### Overview
+The third lab work implements a clothing management system that allows users to create clothing objects, sort them based on specific criteria, and find identical clothing items. It enhances understanding of class management in Java through creating unique classes and using existing ones (Arrays, Comparator).
+
+#### Features
+- Creates clothing objects with attributes such as name, size, price, color, brand, and material. (C11 = 15 % 11 = 4)
+- Sorts clothing objects primarily by name in ascending order and secondarily by price in descending order.
+- Searches for a specific clothing item in an array based on all attributes.
+- Exception handling for:
+  - Invalid input for clothing attributes.
+  - Price limits ranging from 0.01 to 100 000.
+  - Character limits for string attributes (1 to 100 characters).
+- Includes following classes: Clothing, ClothingManager, ClothingApplication.
+
+#### Usage
+Modify the clothing objects in the `ClothingApplication` file to create different clothing items as needed.
+Save the file, recompile, and run the application to see the results in the command line interface (CLI).

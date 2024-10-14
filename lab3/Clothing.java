@@ -24,7 +24,7 @@ public class Clothing {
      *
      * @param name     The name of the clothing item. Must be between 1 and 100 characters.
      * @param size     The size of the clothing item. Must be between 1 and 5 characters.
-     * @param price    The price of the clothing item. Must be between 0.01 and 100,000.
+     * @param price    The price of the clothing item. Must be between 0.01 and 100 000.
      * @param color    The color of the clothing item. Must be between 1 and 100 characters.
      * @param brand    The brand of the clothing item. Must be between 1 and 100 characters.
      * @param material The material of the clothing item. Must be between 1 and 100 characters.
@@ -39,7 +39,7 @@ public class Clothing {
             throw new IllegalArgumentException("Size must be between 1 and 5 characters.");
         }
         if (price < 0.01 || price > 100000.0) {
-            throw new IllegalArgumentException("Price must be between 0.01 and 100,000.");
+            throw new IllegalArgumentException("Price must be between 0.01 and 100 000.");
         }
         if (color == null || color.length() < 1 || color.length() > 100) {
             throw new IllegalArgumentException("Color must be between 1 and 100 characters.");

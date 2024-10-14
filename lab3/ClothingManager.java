@@ -19,16 +19,16 @@ import java.util.Comparator;
 public class ClothingManager {
 
     /**
-     * Sorts an array of {@code Clothing} objects first by price in ascending order, 
-     * and then by name in descending order if prices are equal.
+     * Sorts an array of {@code Clothing} objects first by name in ascending order, 
+     * and then by price in descending order if names are equal.
      *
      * @param clothes The array of {@code Clothing} objects to be sorted. 
      *                The array must not be null.
      */
     public void sortClothing(Clothing[] clothes) {
         Arrays.sort(clothes, Comparator
-            .comparingDouble(Clothing::getPrice) // Sort by the numeric field in ascending order.
-            .thenComparing(Comparator.comparing(Clothing::getName).reversed())); // Sort by name in descending order.
+            .comparing(Clothing::getName) // Sort by name in ascending order.
+            .thenComparing(Comparator.comparingDouble(Clothing::getPrice).reversed())); // Sort by price in descending order.
     }
 
     /**

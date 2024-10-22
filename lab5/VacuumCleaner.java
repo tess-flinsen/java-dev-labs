@@ -6,7 +6,13 @@ public abstract class VacuumCleaner extends Appliance {
 
     public VacuumCleaner(String brand, int power, int suctionPower) {
         super(brand, power);
-        this.suctionPower = suctionPower;
+        setSuctionPower(suctionPower);
+    }
+
+    private void setSuctionPower(int suctionPower) {
+        if (suctionPower <= 0 || suctionPower > 1000) { // Max suction power limit in watts
+            throw new IllegalArgumentException(getClass().getSimpleName() + " - Потужність всмоктування має бути в межах 1-1000 Вт.");
+        }
     }
 
     public int getSuctionPower() {

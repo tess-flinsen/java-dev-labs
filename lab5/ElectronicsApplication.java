@@ -2,12 +2,23 @@ package lab5;
 
 public class ElectronicsApplication {
     public static void main(String[] args) {
-        // Створення приладів
-        Appliance washingMachine = new WashingMachine("Samsung", 500, 7, 1200);
-        Appliance microwave = new Microwave("LG", 800, 25, 1000);
-        Appliance robotVacuum = new RobotVacuum("iRobot", 100, 30, 60);
-        Appliance handheldVacuum = new HandheldVacuum("Dyson", 200, 25, 500, 1);
 
+        Appliance washingMachine = null;
+        Appliance microwave = null;
+        Appliance robotVacuum = null;
+        Appliance handheldVacuum = null;
+
+        try {
+            // Створення приладів
+            washingMachine = new WashingMachine("Samsung", 500, 7, 1200);
+            microwave = new Microwave("LG", 800, 25, 1000);
+            robotVacuum = new RobotVacuum("iRobot", 100, 30, 60);
+            handheldVacuum = new HandheldVacuum("Dyson", 200, 25, 500, 1);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Помилка при створенні приладів: " + e.getMessage());
+            return; 
+        }
+        
         // Додавання приладів до масиву
         Appliance[] appliances = { washingMachine, microwave, handheldVacuum, robotVacuum};
         Apartment apartment = new Apartment(appliances);

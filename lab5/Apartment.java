@@ -9,12 +9,11 @@ public class Apartment {
         this.appliances = appliances;
     }
 
-    // Увімкнути прилад за індексом.
     public void turnOn(int index) {
-        if (index >= 0 && index < appliances.length) {
-            appliances[index].turnOn();
-        } else {
-            System.out.println("Invalid index: " + index);
+        try {
+            appliances[index].turnOn(); // Try to turn on the appliance
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Неправильний індекс: " + index);
         }
     }
 
@@ -62,6 +61,14 @@ public class Apartment {
 
     // Знайти прилад за заданим діапазоном електромагнітного випромінювання.
     public Appliance findApplianceByRadiationRange(int minRadiation, int maxRadiation) {
+        // Check for valid radiation range
+        if (minRadiation < 0 || maxRadiation < 0 || minRadiation > 1000 || maxRadiation > 1000){
+            throw new IllegalArgumentException("Рівень випромінювання має бути в межах від 0 до 1000.");
+        }
+        if (minRadiation > maxRadiation) {
+            throw new IllegalArgumentException("Мінімальний рівень випромінювання не може перевищувати максимальний.");
+        }
+
         for (Appliance appliance : appliances) {
             int radiation = appliance.getRadiationLevel();
             if (radiation >= minRadiation && radiation <= maxRadiation) {

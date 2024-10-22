@@ -6,8 +6,14 @@ public class RobotVacuum extends VacuumCleaner {
 
     public RobotVacuum(String brand, int power, int suctionPower, int batteryLife) {
         super(brand, power, suctionPower);
-        this.batteryLife = batteryLife; // Initialize battery life
+        setBatteryLife(batteryLife); // Initialize battery life
         setRadiationLevel(ROBOT_VACUUM_STANDARD_RADIATION_LEVEL);
+    }
+
+    private void setBatteryLife(int batteryLife) {
+        if (batteryLife <= 0 || batteryLife > 360) { // Max battery life limit in minutes
+            throw new IllegalArgumentException(getClass().getSimpleName() + " - Час роботи батареї має бути в межах 1-360 хв.");
+        }
     }
 
     public int getBatteryLife() {

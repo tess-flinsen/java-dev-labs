@@ -76,3 +76,34 @@ The third lab work implements a clothing management system that allows users to 
 #### Usage
 Modify the clothing objects in the `ClothingApplication` file to create different clothing items as needed.
 Save the file, recompile, and run the application to see the results in the command line interface (CLI).
+
+---
+### Lab Work 5: Inheritance and Polymorphism
+
+#### Overview
+The fifth lab work implements an electrical appliances management system that allows users to manage various appliances, including washing machines, microwaves, and vacuum cleaners. This project enhances the understanding of object-oriented programming concepts in Java through the creation and manipulation of class hierarchies and the use of inheritance and interfaces.
+
+#### Features
+- Creates appliance objects and manages specific appliance types, including **WashingMachine**, **Microwave**, **RobotVacuum** and **HandheldVacuum**.
+- Provides methods to:
+  - Turn appliances on and off
+  - Calculate the total power consumption of all active appliances.
+  - Sort active appliances by power.
+  - Find appliances based on electromagnetic radiation levels.
+- Implements exception handling.
+
+#### Usage
+1. Modify the appliance objects in the `ElectronicsApplication` file to create different appliances as needed.
+2. Save the file, recompile, and run the application to see the results in the command line interface (CLI).
+3. Interact with the system by turning appliances on, calculating power consumption, and sorting or searching for appliances based on specified criteria.
+
+#### Class Hierarchy
+The project features a structured class hierarchy for managing electrical appliances:
+- **Appliance**: The abstract base class with common attributes and methods.
+  - **Microwave**: Extends `Appliance` with attributes like capacity and max output power.
+  - **WashingMachine**: Extends `Appliance`, adding drum size and spin speed.
+  - **VacuumCleaner**: An abstract subclass of `Appliance`.
+    - **RobotVacuum**: Inherits from `VacuumCleaner` with a battery life attribute.
+    - **HandheldVacuum**: Inherits from `VacuumCleaner` with weight and dust container capacity attributes.
+
+- **Apartment**: Manages an array of `Appliance` objects, allowing operations like turning on appliances, calculating total power consumption, sorting appliances, and finding appliances based on radiation levels.

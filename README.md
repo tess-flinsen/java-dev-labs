@@ -84,7 +84,7 @@ Save the file, recompile, and run the application to see the results in the comm
 The fifth lab work implements an electrical appliances management system that allows users to manage various appliances, including washing machines, microwaves, and vacuum cleaners. This project enhances the understanding of object-oriented programming concepts in Java through the creation and manipulation of class hierarchies and the use of inheritance and interfaces.
 
 #### Features
-- Creates appliance objects and manages specific appliance types, including **WashingMachine**, **Microwave**, **RobotVacuum** and **HandheldVacuum**.
+- Creates appliance objects and manages specific appliance types, including **WashingMachine**, **Microwave**, **RobotVacuum** and **HandheldVacuum**. (C13 = 15 % 13 = 2)
 - Provides methods to:
   - Turn appliances on and off
   - Calculate the total power consumption of all active appliances.

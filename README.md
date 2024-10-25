@@ -78,6 +78,30 @@ Modify the clothing objects in the `ClothingApplication` file to create differen
 Save the file, recompile, and run the application to see the results in the command line interface (CLI).
 
 ---
+### Lab Work 4: Relationships Between Classes in the Java Programming Language
+
+#### Overview
+The fourth lab work focuses on creating a sentence processing system using custom classes to represent letters, punctuation, words, sentences, and texts. This project enhances understanding of the relationships between classes in the Java programming language. 
+
+#### Features
+- Replaces words of a specified length in the text with a replacement word. (C17 = 15 % 17 = 15)
+- Counts letters in words while excluding numbers and special characters.
+- Supports English alphabet only.
+- Handles space separation and punctuation.
+- Utilizes custom classes for:
+  - `Letter`: Represents individual letters.
+  - `Punctuation`: Represents punctuation marks.
+  - `Word`: Represents words as arrays of letters.
+  - `Sentence`: Represents sentences as arrays of words and punctuation.
+  - `Text`: Represents the overall text as an array of sentences.
+  - `TextProcessor`: Processes the text according to specified rules.
+
+#### Usage
+1. Change the input text, word length, and replacement word in the `StringApplication` class as needed.
+2. You can check the limits for word length in the `TextProcessor` class constructor.
+3. After making changes, save the file, recompile the project, and run it again to see the results in the command line interface (CLI).
+
+---
 ### Lab Work 5: Inheritance and Polymorphism
 
 #### Overview

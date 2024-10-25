@@ -1,22 +1,22 @@
 package lab4;
 
 public class StringApplication {
-
     public static void main(String[] args) {
-        String inputText = "This is a simple test! Українська теж працює, при тому завжди?";
-        Text text = new Text(inputText);
-        
-        for (Sentence sentence : text.getSentences()) {
-            System.out.println("Sentence:");
-            for (Word word : sentence.getWords()) {
-                System.out.print(word.getValue() + " ");
-            }
-            for (Punctuation punctuation : sentence.getPunctuations()) {
-                System.out.print(punctuation.getValue() + " ");
-            }
-            System.out.println();
+        String inputText = "This is a simple test for string processing. There are some, and others!";
+        int wordLength = 4;
+        Word replacement = new Word("lala");
+
+        try {
+            Text text = new Text(inputText);
+            TextProcessor textProcessor = new TextProcessor(text, wordLength, replacement);
+
+            System.out.println("Input text: " + inputText);
+            String processedText = textProcessor.processText();
+            System.out.println("\nProcessed text: " + processedText);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Input validation error: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("An unexpected error occurred: " + e.getMessage());
         }
     }
 }
-
-

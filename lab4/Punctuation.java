@@ -15,6 +15,6 @@ public class Punctuation {
     }
 
     public static boolean isPunctuation(char ch) {
-        return ",?!.:;()-".indexOf(ch) != -1;
+        return " ,?!.:;()-".indexOf(ch) != -1;
     }
 }

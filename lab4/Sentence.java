@@ -1,8 +1,17 @@
 package lab4;
 
+/**
+ * The Sentence class represents a sentence composed of words and punctuation.
+ */
 public class Sentence {
     private Object[] elements; // Can hold both Word and Punctuation
 
+    /**
+     * Constructs a Sentence from the specified string.
+     *
+     * @param sentence the string representation of the sentence
+     * @throws IllegalArgumentException if the sentence is null or empty
+     */
     public Sentence(String sentence) {
         if (sentence == null || sentence.isEmpty()) {
             throw new IllegalArgumentException("Sentence cannot be null or empty.");
@@ -12,6 +21,11 @@ public class Sentence {
         parseSentence(sentence);
     }
 
+    /**
+     * Parses the given sentence into words and punctuation marks.
+     *
+     * @param sentence the string representation of the sentence to be parsed
+     */
     private void parseSentence(String sentence) {
         StringBuilder currentWord = new StringBuilder();
         int count = 0;
@@ -45,6 +59,11 @@ public class Sentence {
         elements = finalElements; // Assign the finalized array back
     }
 
+    /**
+     * Returns the elements of this sentence, which may include words and punctuation.
+     *
+     * @return an array of elements (Word and Punctuation) in this sentence
+     */
     public Object[] getElements() {
         return elements;
     }

@@ -1,8 +1,19 @@
 package lab4;
 
+/**
+ * The Word class represents a word made up of letters.
+ * It provides methods to construct a word from a string, 
+ * retrieve the string value of the word, and obtain its length.
+ */
 public class Word {
     private Letter[] letters;
 
+    /**
+     * Constructs a Word object from the specified string.
+     *
+     * @param word the string representation of the word
+     * @throws IllegalArgumentException if the word is null, empty, or contains invalid characters
+     */
     public Word(String word) {
         if (word == null || word.isEmpty()) {
             throw new IllegalArgumentException("Word cannot be null or empty.");
@@ -18,6 +29,11 @@ public class Word {
         }
     }
 
+    /**
+     * Retrieves the string representation of the word.
+     *
+     * @return the string value of the word
+     */
     public String getValue() {
         StringBuilder wordValue = new StringBuilder();
         for (Letter letter : letters) {
@@ -26,6 +42,11 @@ public class Word {
         return wordValue.toString();
     }
 
+    /**
+     * Returns the length of the word.
+     *
+     * @return the number of letters in the word
+     */
     public int length() {
         return letters.length; // This is still valid; you could also track the number of letters added
     }

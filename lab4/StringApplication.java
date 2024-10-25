@@ -1,5 +1,9 @@
 package lab4;
 
+/**
+ * The StringApplication class is the entry point of the application, which processes text 
+ * by replacing words of a specified length with a replacement word.
+ */
 public class StringApplication {
     public static void main(String[] args) {
         String inputText = "This is a simple test for string processing. There are some, and others!";

@@ -7,30 +7,46 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.Arrays;
 
+/**
+ * A typed collection that stores unique {@link Appliance} objects and implements the {@link Set} interface.
+ * It uses an internal array structure to store elements with an initial capacity and a growth factor.
+ */
 public class ApplianceSet implements Set<Appliance> {
     private Appliance[] appliances;
     private int size;
     private static final int INITIAL_CAPACITY = 15;
     private static final double GROWTH_FACTOR = 1.3;
 
-    // Default constructor
+    /**
+     * Constructs an empty {@code ApplianceSet} with an initial capacity.
+     */
     public ApplianceSet() {
         appliances = new Appliance[INITIAL_CAPACITY];
         size = 0;
     }
 
-    // Constructor with one Appliance
+    /**
+     * Constructs an {@code ApplianceSet} containing a single {@link Appliance}.
+     *
+     * @param appliance the appliance to be added to the set.
+     * @throws IllegalArgumentException if the provided appliance is {@code null}.
+     */
     public ApplianceSet(Appliance appliance) {
-        this(); // Call the default constructor
+        this();
         if (appliance == null) {
             throw new IllegalArgumentException("The appliance cannot be null.");
         }
         add(appliance);
     }
 
-    // Constructor with a Collection of Appliances
+    /**
+     * Constructs an {@code ApplianceSet} containing all elements from the specified collection.
+     *
+     * @param collection the collection containing appliances to be added.
+     * @throws IllegalArgumentException if the collection or any of its elements are {@code null}.
+     */
     public ApplianceSet(Collection<Appliance> collection) {
-        this(); // Call the default constructor
+        this();
         if (collection == null) {
             throw new IllegalArgumentException("The collection cannot be null.");
         }
@@ -102,7 +118,11 @@ public class ApplianceSet implements Set<Appliance> {
         size = 0; // Reset size
     }
 
-    // Ensure the internal array has enough capacity to add a new element
+    /**
+     * Ensures that the internal array has enough capacity to add a new element.
+     * If the current size has reached the array's capacity, it increases the capacity
+     * based on the growth factor.
+     */
     private void ensureCapacity() {
         if (size >= appliances.length) {
             int newCapacity = (int) (appliances.length * GROWTH_FACTOR);
@@ -111,16 +131,32 @@ public class ApplianceSet implements Set<Appliance> {
     }
 
     @Override
+    /**
+     * Returns an iterator over the elements in this set.
+     *
+     * @return an iterator over the elements in this set
+     */
     public Iterator<Appliance> iterator() {
         return new Iterator<Appliance>() {
             private int currentIndex = 0;
 
             @Override
+            /**
+             * Checks if the iterator has more elements.
+             *
+             * @return {@code true} if there are more elements, {@code false} otherwise
+             */
             public boolean hasNext() {
                 return currentIndex < size; // Check if there are more elements
             }
 
             @Override
+            /**
+             * Returns the next element in the iteration.
+             *
+             * @return the next element in the iteration
+             * @throws NoSuchElementException if the iteration has no more elements
+             */
             public Appliance next() {
                 if (!hasNext()) {
                     throw new NoSuchElementException("No more elements in the iterator.");
@@ -129,6 +165,11 @@ public class ApplianceSet implements Set<Appliance> {
             }
 
             @Override
+            /**
+             * Unsupported operation for this iterator.
+             *
+             * @throws UnsupportedOperationException always thrown as this operation is not supported
+             */
             public void remove() {
                 throw new UnsupportedOperationException("Remove operation is not supported by this iterator.");
             }
@@ -136,6 +177,11 @@ public class ApplianceSet implements Set<Appliance> {
     }
 
     @Override
+    /**
+     * Returns an array containing all of the elements in this set.
+     *
+     * @return an array containing all of the elements in this set
+     */
     public Object[] toArray() {
         Object[] array = new Object[size]; // Create a new Object array of the current size
         System.arraycopy(appliances, 0, array, 0, size); // Copy elements from the appliances array to the new array
@@ -144,6 +190,16 @@ public class ApplianceSet implements Set<Appliance> {
 
     @Override
     @SuppressWarnings("unchecked")
+    /**
+     * Returns an array containing all of the elements in this set.
+     * The runtime type of the returned array is that of the specified array.
+     *
+     * @param <T> the type of elements in the array
+     * @param a the array into which the elements of the set are to be stored, if it is big enough;
+     *          otherwise, a new array of the same runtime type is allocated for this purpose.
+     * @return an array containing the elements of the set
+     * @throws IllegalArgumentException if the provided array is null or of incompatible type
+     */
     public <T> T[] toArray(T[] a) {
         if (a == null) {
             throw new IllegalArgumentException("Provided array cannot be null.");
@@ -165,6 +221,13 @@ public class ApplianceSet implements Set<Appliance> {
     }
 
     @Override
+    /**
+     * Adds all of the elements in the specified collection to this set if they're not already present.
+     *
+     * @param c the collection containing elements to be added to this set
+     * @return {@code true} if this set changed as a result of the call
+     * @throws IllegalArgumentException if the specified collection is null or contains null elements
+     */
     public boolean addAll(Collection<? extends Appliance> c) {
         if (c == null) {
             throw new IllegalArgumentException("The provided collection cannot be null.");
@@ -183,6 +246,13 @@ public class ApplianceSet implements Set<Appliance> {
     }
 
     @Override
+    /**
+     * Retains only the elements in this set that are contained in the specified collection.
+     *
+     * @param c collection containing elements to be retained in this set
+     * @return {@code true} if this set changed as a result of the call
+     * @throws IllegalArgumentException if the specified collection is null
+     */
     public boolean retainAll(Collection<?> c) {
         if (c == null) {
             throw new IllegalArgumentException("The provided collection cannot be null.");
@@ -198,6 +268,13 @@ public class ApplianceSet implements Set<Appliance> {
     }
 
     @Override
+    /**
+     * Removes from this set all of its elements that are contained in the specified collection.
+     *
+     * @param c collection containing elements to be removed from this set
+     * @return {@code true} if this set changed as a result of the call
+     * @throws IllegalArgumentException if the specified collection is null
+     */
     public boolean removeAll(Collection<?> c) {
         if (c == null) {
             throw new IllegalArgumentException("The provided collection cannot be null.");
@@ -212,6 +289,13 @@ public class ApplianceSet implements Set<Appliance> {
     }
 
     @Override
+    /**
+     * Returns {@code true} if this set contains all of the elements in the specified collection.
+     *
+     * @param c collection to be checked for containment in this set
+     * @return {@code true} if this set contains all of the elements in the specified collection
+     * @throws IllegalArgumentException if the specified collection is null
+     */
     public boolean containsAll(Collection<?> c) {
         if (c == null) {
             throw new IllegalArgumentException("The provided collection cannot be null.");

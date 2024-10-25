@@ -8,7 +8,18 @@ import lab5.RobotVacuum;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Demonstrates the usage of the {@link ApplianceSet} class by performing various operations 
+ * such as adding, removing, and retaining appliances. Also demonstrates the use of different 
+ * constructors and error handling.
+ */
 public class SetApplication {
+    /**
+     * The main method that serves as the entry point of the application.
+     * It demonstrates how to use the {@link ApplianceSet} class and its methods.
+     *
+     * @param args the command line arguments (not used)
+     */
     public static void main(String[] args) {
         try {
             // Create instances of Appliance (use subclasses or Appliance if abstract is removed)
@@ -78,7 +89,12 @@ public class SetApplication {
         }
     }
 
-    // Utility method to print the contents of the ApplianceSet
+    /**
+     * Utility method to print the contents of the provided {@link ApplianceSet}.
+     * It iterates over the elements in the set and prints their details.
+     *
+     * @param applianceSet the {@link ApplianceSet} whose contents are to be printed
+     */
     private static void printApplianceSet(ApplianceSet applianceSet) {
         System.out.println("ApplianceSet contents:");
         for (Appliance appliance : applianceSet) {

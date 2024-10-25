@@ -107,3 +107,24 @@ The project features a structured class hierarchy for managing electrical applia
     - **HandheldVacuum**: Inherits from `VacuumCleaner` with weight and dust container capacity attributes.
 
 - **Apartment**: Manages an array of `Appliance` objects, allowing operations like turning on appliances, calculating total power consumption, sorting appliances, and finding appliances based on radiation levels.
+
+---
+### Lab Work 6: Working with Collection in Java programming language
+
+#### Overview
+The sixth lab work involves creating a custom collection class that implements the `Set` interface and manages a collection of electrical appliances. This project reinforces understanding of Java collection frameworks, generics, and custom data structures, while building on the appliance management system from the previous lab.
+
+#### Features
+- Implements a custom set collection called **ApplianceSet** for storing unique `Appliance` objects from Lab 5.
+- Provides three constructors.
+- Implements all method of the Set interface. (C2 = 15 % 2 = 1)
+- Has internal structure of an array with an initial capacity of 15 elements and an increase in capacity by 30% (C3 = 15 % 3 = 0)
+
+#### Usage
+1. Create and modify appliance objects in the `SetApplication` file, such as instances of **WashingMachine**, **Microwave**, and **RobotVacuum**.
+2. Use the provided constructors to initialize the `ApplianceSet` with various appliances.
+3. Call methods like `add`, `remove`, `addAll`, `retainAll`, and `removeAll` to manipulate the `ApplianceSet`.
+4. Recompile and run the `SetApplication` file to see the results in the command line interface (CLI).
+5. Observe the effects of each method, including adding or removing elements and checking for containment.
+
+To find out more about the Appliance class and different Appliance types, please refer to Lab 5.
